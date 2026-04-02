@@ -27,10 +27,10 @@ export default function ContactPage() {
     const data = new FormData(form)
 
     try {
-      const response = await fetch('/', {
+      const response = await fetch('https://formspree.io/f/xlgolqzp', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(data as unknown as Record<string, string>).toString(),
+        body: data,
+        headers: { Accept: 'application/json' },
       })
 
       if (response.ok) {
@@ -95,18 +95,9 @@ export default function ContactPage() {
                 </div>
               ) : (
                 <form
-                  name="contact"
-                  method="POST"
-                  data-netlify="true"
-                  data-netlify-honeypot="bot-field"
                   onSubmit={handleSubmit}
                   className="space-y-6"
                 >
-                  {/* Required hidden fields for Netlify Forms */}
-                  <input type="hidden" name="form-name" value="contact" />
-                  <p className="hidden">
-                    <label>Don&apos;t fill this out: <input name="bot-field" /></label>
-                  </p>
                   {/* Name */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
