@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream text-navy font-inter;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair;
+  }
+}
+
+@layer components {
+  .gold-divider {
+    @apply w-16 h-px bg-gold mx-auto my-6;
+  }
+
+  .gold-divider-left {
+    @apply w-16 h-px bg-gold my-6;
+  }
+
+  .section-label {
+    @apply text-gold font-inter text-xs tracking-widest uppercase font-medium;
+  }
+
+  .btn-gold {
+    @apply inline-block bg-gold text-navy font-inter font-semibold text-sm tracking-wide px-7 py-3
+           transition-all duration-300 hover:bg-gold-dark hover:shadow-lg;
+  }
+
+  .btn-navy {
+    @apply inline-block bg-navy text-cream font-inter font-semibold text-sm tracking-wide px-7 py-3
+           transition-all duration-300 hover:bg-navy-dark hover:shadow-lg;
+  }
+
+  .btn-outline-gold {
+    @apply inline-block border border-gold text-gold font-inter font-semibold text-sm tracking-wide px-7 py-3
+           transition-all duration-300 hover:bg-gold hover:text-navy;
+  }
+
+  .btn-outline-cream {
+    @apply inline-block border border-cream text-cream font-inter font-semibold text-sm tracking-wide px-7 py-3
+           transition-all duration-300 hover:bg-cream hover:text-navy;
+  }
+
+  .card {
+    @apply bg-white border border-cream-deeper shadow-sm hover:shadow-md transition-shadow duration-300 p-8;
+  }
+
+  .page-header {
+    @apply bg-navy text-cream py-20 md:py-28 text-center;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF8F3;
+}
+::-webkit-scrollbar-thumb {
+  background: #C9A84C;
+  border-radius: 3px;
+}
