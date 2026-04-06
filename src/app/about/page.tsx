@@ -1,7 +1,7 @@
 import Link from 'next/link'
-import PlaceholderPhoto from '@/components/PlaceholderPhoto'
+import Image from 'next/image'
 import Testimonials from '@/components/Testimonials'
-import { allTestimonials } from '@/data/testimonials'
+import { featuredTestimonials } from '@/data/testimonials'
 
 const experience = [
   {
@@ -63,9 +63,10 @@ export default function AboutPage() {
           <h1 className="font-playfair text-4xl md:text-5xl font-semibold text-cream mb-2">
             Danielle Olich,
           </h1>
-          <h1 className="font-playfair text-4xl md:text-5xl font-semibold text-cream italic mb-4">
+          <h1 className="font-playfair text-4xl md:text-5xl font-semibold text-cream italic mb-3">
             BSN, RN-BC
           </h1>
+          <p className="text-gold/70 font-inter text-sm mb-4">License #: RN159087</p>
           <div className="w-16 h-px bg-gold mx-auto my-6" />
           <p className="text-cream/70 font-inter text-base md:text-lg leading-relaxed">
             17+ years of clinical excellence. Board certified. Deeply committed to the kind of care that treats you as a whole person.
@@ -83,9 +84,16 @@ export default function AboutPage() {
               <div className="relative">
                 <div className="absolute -top-6 -right-6 w-32 h-32 border border-gold/25 rounded" />
                 <div className="absolute -bottom-6 -left-6 w-20 h-20 border border-gold/15 rounded" />
-                <PlaceholderPhoto size="lg" className="relative z-10" />
-                {/* Credentials badge */}
-                <div className="absolute -bottom-6 right-0 md:-right-6 bg-navy text-cream px-6 py-5 shadow-xl">
+                <div className="w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden relative z-10">
+                  <Image
+                    src="/images/danielle.png"
+                    alt="Danielle Olich, BSN, RN-BC — Private Duty Nurse"
+                    fill
+                    className="object-cover object-top"
+                    priority
+                  />
+                </div>
+                <div className="absolute -bottom-6 right-0 md:-right-6 bg-navy text-cream px-6 py-5 shadow-xl z-20">
                   <div className="text-gold font-playfair text-2xl font-semibold">RN-BC</div>
                   <div className="text-cream/70 text-xs font-inter tracking-wide uppercase mt-1">Board Certified</div>
                   <div className="text-cream/70 text-xs font-inter tracking-wide uppercase">Med-Surg Nursing</div>
@@ -100,37 +108,10 @@ export default function AboutPage() {
                 A Career Built on Compassion
               </h2>
               <div className="gold-divider-left" />
-
-              <div className="space-y-5 text-navy/70 font-inter text-base leading-relaxed">
+              <div className="text-navy/70 font-inter text-base leading-relaxed">
                 <p>
-                  With over 17 years of nursing experience across some of the Valley&rsquo;s most respected medical institutions, I&rsquo;ve had the privilege of caring for patients through some of the most vulnerable and important moments of their lives.
+                  With over 17 years of nursing experience across some of the Valley&rsquo;s most respected medical institutions, including St. Joseph&rsquo;s Hospital and HonorHealth, I bring deep clinical expertise directly to you. I&rsquo;m board certified in medical-surgical nursing and specialize in post-surgical recovery, wound care, pain management, and complex disease management. Today I bring all of that experience to your home — with patience, presence, and genuine compassion.
                 </p>
-                <p>
-                  My career began in long-term and skilled nursing care, where I learned that the most meaningful nursing happens one patient at a time — with patience, presence, and genuine compassion.
-                </p>
-                <p>
-                  From there I went on to work in telemetry, medical-surgical, and oncology units at St. Joseph&rsquo;s Hospital and HonorHealth, where I built deep clinical expertise in post-surgical recovery, wound care, pain management, central line care, and complex disease management.
-                </p>
-                <p>
-                  I also spent several years in addiction and detox nursing at Gallus Detox, where I learned how much courage it takes for people to ask for help — and how important it is to meet them with kindness when they do.
-                </p>
-                <p>
-                  Today I bring all of that experience directly to you — in the comfort of your own home. I&rsquo;m board certified, detail-oriented, and deeply committed to the kind of care that treats you as a whole person — not just a patient.
-                </p>
-              </div>
-
-              <div className="mt-10 grid grid-cols-2 gap-4">
-                {[
-                  ['Post-Surgical Recovery', 'Wound Care & PICC Lines'],
-                  ['Pain Management', 'Cardiac Telemetry'],
-                  ['Oncology Nursing', 'Addiction & Detox Nursing'],
-                  ['Patient Education', 'Complex Disease Management'],
-                ].map(([area]) => (
-                  <div key={area} className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0" />
-                    <span className="text-navy/65 text-sm font-inter">{area}</span>
-                  </div>
-                ))}
               </div>
             </div>
           </div>
@@ -174,27 +155,17 @@ export default function AboutPage() {
             <div className="gold-divider" />
           </div>
 
-          {/* Timeline */}
           <div className="relative">
-            {/* Vertical line */}
             <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gold/20 transform md:-translate-x-1/2" />
-
             <div className="space-y-10">
               {experience.map(({ title, employer, location, period, current, description }, index) => (
                 <div
                   key={employer + period}
-                  className={`relative flex flex-col md:flex-row gap-8 ${
-                    index % 2 === 0 ? 'md:flex-row-reverse' : ''
-                  }`}
+                  className={`relative flex flex-col md:flex-row gap-8 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
                 >
-                  {/* Dot */}
                   <div className="absolute left-4 md:left-1/2 top-6 w-3 h-3 rounded-full bg-gold transform -translate-x-1/2 md:-translate-x-1/2 z-10">
-                    {current && (
-                      <div className="absolute inset-0 rounded-full bg-gold animate-ping opacity-30" />
-                    )}
+                    {current && <div className="absolute inset-0 rounded-full bg-gold animate-ping opacity-30" />}
                   </div>
-
-                  {/* Content */}
                   <div className={`ml-12 md:ml-0 md:w-[calc(50%-2rem)] ${index % 2 === 0 ? 'md:text-right md:pr-8' : 'md:pl-8'}`}>
                     <div className="bg-white border border-cream-deeper shadow-sm p-6 md:p-7">
                       {current && (
@@ -202,25 +173,13 @@ export default function AboutPage() {
                           Current
                         </span>
                       )}
-                      <div className="text-gold font-inter text-xs font-medium tracking-wide uppercase mb-2">
-                        {period}
-                      </div>
-                      <h3 className="font-playfair text-lg font-semibold text-navy mb-1">
-                        {title}
-                      </h3>
-                      <div className="text-navy-light font-inter text-sm font-medium mb-1">
-                        {employer}
-                      </div>
-                      <div className="text-navy/50 font-inter text-xs mb-4">
-                        {location}
-                      </div>
-                      <p className="text-navy/60 font-inter text-sm leading-relaxed">
-                        {description}
-                      </p>
+                      <div className="text-gold font-inter text-xs font-medium tracking-wide uppercase mb-2">{period}</div>
+                      <h3 className="font-playfair text-lg font-semibold text-navy mb-1">{title}</h3>
+                      <div className="text-navy-light font-inter text-sm font-medium mb-1">{employer}</div>
+                      <div className="text-navy/50 font-inter text-xs mb-4">{location}</div>
+                      <p className="text-navy/60 font-inter text-sm leading-relaxed">{description}</p>
                     </div>
                   </div>
-
-                  {/* Spacer for opposite side */}
                   <div className="hidden md:block md:w-[calc(50%-2rem)]" />
                 </div>
               ))}
@@ -229,7 +188,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Endorsements */}
+      {/* Endorsements — 3 only */}
       <section className="bg-navy py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="text-center mb-14">
@@ -244,7 +203,7 @@ export default function AboutPage() {
               Excerpts from Danielle&rsquo;s 2022–2023 annual performance review at HonorHealth — multiple categories rated <span className="text-gold">Exceptional Performer</span>.
             </p>
           </div>
-          <Testimonials items={allTestimonials} variant="dark" showAll />
+          <Testimonials items={featuredTestimonials} variant="dark" />
         </div>
       </section>
 
@@ -258,7 +217,6 @@ export default function AboutPage() {
             </h2>
             <div className="gold-divider" />
           </div>
-
           <div className="flex justify-center">
             <div className="bg-white border border-cream-deeper shadow-sm p-8 md:p-10 max-w-lg w-full text-center">
               <div className="w-14 h-14 mx-auto mb-5 text-gold">
@@ -268,15 +226,9 @@ export default function AboutPage() {
                 Associate of Applied Science in Nursing
               </div>
               <div className="w-8 h-px bg-gold mx-auto my-4" />
-              <div className="text-navy-light font-inter font-medium text-sm mb-1">
-                Gateway Community College
-              </div>
-              <div className="text-navy/50 font-inter text-sm mb-1">
-                Phoenix, AZ
-              </div>
-              <div className="text-gold font-inter text-xs font-medium tracking-wide uppercase mt-3">
-                Class of 2009
-              </div>
+              <div className="text-navy-light font-inter font-medium text-sm mb-1">Gateway Community College</div>
+              <div className="text-navy/50 font-inter text-sm mb-1">Phoenix, AZ</div>
+              <div className="text-gold font-inter text-xs font-medium tracking-wide uppercase mt-3">Class of 2009</div>
             </div>
           </div>
         </div>
@@ -293,14 +245,9 @@ export default function AboutPage() {
           <p className="text-navy/65 font-inter text-base leading-relaxed mb-8">
             My experience, credentials, and compassionate approach are now available to you directly — in your home, on your terms.
           </p>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <Link href="/contact" className="btn-navy">
-              Get in Touch
-            </Link>
-            <Link href="/services" className="btn-outline-gold">
-              View Services
-            </Link>
-          </div>
+          <Link href="/contact" className="btn-navy">
+            Get in Touch
+          </Link>
         </div>
       </section>
     </>

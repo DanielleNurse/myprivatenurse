@@ -3,14 +3,15 @@
 import { useState } from 'react'
 
 const careTypes = [
-  'Post-Surgical Recovery Care',
-  'Overnight Nursing Care',
-  'Live-In Daily Care',
-  'IV Therapy & Wound Care',
-  'Postpartum & Newborn Support',
-  'Elder Companion & Wellness Visits',
-  'Pediatric Private Nursing',
-  'Corporate & Event Nursing',
+  'Post-Surgical Recovery',
+  'IV, Wound, Drain & Catheter Management',
+  'Medication Management',
+  'Elder Companion & Wellness',
+  'Dementia Care & Education',
+  'Care for Chronic Conditions',
+  'Ostomy Care & Management',
+  'Pain Management',
+  'Advocacy — Doctor Appointments & Hospitalization',
   'Other / Not Sure',
 ]
 
@@ -57,7 +58,7 @@ export default function ContactPage() {
           </h1>
           <div className="w-16 h-px bg-gold mx-auto my-6" />
           <p className="text-cream/70 font-inter text-base md:text-lg leading-relaxed">
-            I respond personally to every inquiry. Share a bit about your situation and I&rsquo;ll be in touch within one business day.
+            Share a bit about your situation, and I will contact you.
           </p>
         </div>
       </div>
@@ -281,7 +282,7 @@ export default function ContactPage() {
                 </h3>
                 <div className="space-y-3">
                   {[
-                    'I respond personally to every inquiry within one business day.',
+                    'I respond personally to every inquiry.',
                     'We\'ll have a brief call to discuss your needs and determine if we\'re a good fit.',
                     'I\'ll put together a care plan and we\'ll align on timing and logistics.',
                   ].map((step, i) => (
