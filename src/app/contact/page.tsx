@@ -85,7 +85,7 @@ export default function ContactPage() {
                     Thank You
                   </h3>
                   <p className="text-navy/65 font-inter text-base leading-relaxed">
-                    Your message has been received. I&rsquo;ll be in touch personally within one business day.
+                    Your message has been received. I&rsquo;ll be in touch soon.
                   </p>
                   <button
                     onClick={() => setFormState('idle')}
