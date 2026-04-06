@@ -41,13 +41,20 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-20 md:h-24">
 
           {/* Logo */}
-          <Link href="/" className="flex flex-col leading-tight group">
-            <span className="font-playfair text-xl md:text-2xl font-semibold text-navy group-hover:text-navy-light transition-colors">
-              My Private Nurse
-            </span>
-            <span className="text-gold text-xs font-inter font-medium tracking-widest uppercase mt-0.5">
-              Danielle Olich, BSN, RN-BC
-            </span>
+          <Link href="/" className="flex items-center gap-3 group">
+            <img
+              src="/images/nav-logo.png"
+              alt="My Private Nurse"
+              className="h-10 md:h-12 w-auto flex-shrink-0"
+            />
+            <div className="flex flex-col leading-tight">
+              <span className="font-playfair text-xl md:text-2xl font-semibold text-navy group-hover:text-navy-light transition-colors">
+                My Private Nurse
+              </span>
+              <span className="text-gold text-xs font-inter font-medium tracking-widest uppercase mt-0.5">
+                Danielle Olich, BSN, RN-BC
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Nav */}
