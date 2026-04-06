@@ -164,7 +164,7 @@ export default function HomePage() {
               </h2>
               <div className="gold-divider-left" />
               <p className="text-navy/70 font-inter text-base leading-relaxed mb-8">
-                With over 17 years of nursing experience across some of the Valley&rsquo;s most respected medical institutions — including St. Joseph&rsquo;s Hospital and HonorHealth — I bring deep clinical expertise directly to you. I&rsquo;m board certified in medical-surgical nursing and specialize in post-surgical recovery, wound care, pain management, and complex disease management. Today I bring all of that experience to your home — with patience, presence, and genuine compassion.
+                Private duty nurse committed to enhancing the quality of life for clients in their own home. I have a deeply compassionate approach, bringing clinical expertise and emotional support to my patients&rsquo; care. I am an unwavering advocate, ensuring that patients&rsquo; wishes are prioritized and medical information is clearly communicated to families and physicians. I have an eye for detail and proactively monitor changes in patient conditions, helping to bridge the gap between acute clinical needs and home-based comfort, providing personalized care families can trust.
               </p>
               <Link href="/about" className="btn-navy">
                 Read Full Bio &amp; Resume
