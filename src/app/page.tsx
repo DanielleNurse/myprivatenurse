@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import Testimonials from '@/components/Testimonials'
 import { featuredTestimonials } from '@/data/testimonials'
 
@@ -73,13 +72,11 @@ export default function HomePage() {
               <div className="relative">
                 <div className="absolute -inset-4 rounded-full border border-gold/20" />
                 <div className="absolute -inset-8 rounded-full border border-gold/10" />
-                <div className="w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden relative">
-                  <Image
+                <div className="w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden">
+                  <img
                     src="/images/danielle.png"
                     alt="Danielle Olich, BSN, RN-BC — Private Duty Nurse"
-                    fill
-                    className="object-cover object-top"
-                    priority
+                    className="w-full h-full object-cover object-top"
                   />
                 </div>
                 {/* Floating credential badge */}
@@ -148,11 +145,10 @@ export default function HomePage() {
                 <div className="absolute -top-6 -left-6 w-24 h-24 border border-gold/30 rounded" />
                 <div className="absolute -bottom-6 -right-6 w-24 h-24 border border-gold/20 rounded" />
                 <div className="w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden relative z-10">
-                  <Image
+                  <img
                     src="/images/danielle.png"
                     alt="Danielle Olich, BSN, RN-BC"
-                    fill
-                    className="object-cover object-top"
+                    className="w-full h-full object-cover object-top"
                   />
                 </div>
               </div>

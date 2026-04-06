@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import Testimonials from '@/components/Testimonials'
 import { featuredTestimonials } from '@/data/testimonials'
 
@@ -85,12 +84,10 @@ export default function AboutPage() {
                 <div className="absolute -top-6 -right-6 w-32 h-32 border border-gold/25 rounded" />
                 <div className="absolute -bottom-6 -left-6 w-20 h-20 border border-gold/15 rounded" />
                 <div className="w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden relative z-10">
-                  <Image
+                  <img
                     src="/images/danielle.png"
                     alt="Danielle Olich, BSN, RN-BC — Private Duty Nurse"
-                    fill
-                    className="object-cover object-top"
-                    priority
+                    className="w-full h-full object-cover object-top"
                   />
                 </div>
                 <div className="absolute -bottom-6 right-0 md:-right-6 bg-navy text-cream px-6 py-5 shadow-xl z-20">
